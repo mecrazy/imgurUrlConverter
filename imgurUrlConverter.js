@@ -10,11 +10,15 @@ function getImgurUrlObj(baseUrl){
 		}
 	}
 	if(execute){
+		var protocol = 'http';
 		object.page = baseUrl;
-		object.uuid = object.page.replace(/^http:\/\/imgur.com\//i,'');
-		object.original = 'http://i.imgur.com/' + object.uuid + '.jpg';
-		object.small = 'http://i.imgur.com/' + object.uuid + 's.jpg';
-		object.large = 'http://i.imgur.com/' + object.uuid + 'l.jpg';
+		object.uuid = object.page.replace(/^(http|https):\/\/imgur.com\//i,'');
+		if(baseUrl.match(/^https/i)){
+			protocol = 'https';
+		}
+		object.original = protocol + '://i.imgur.com/' + object.uuid + '.jpg';
+		object.small = protocol + '://i.imgur.com/' + object.uuid + 's.jpg';
+		object.large = protocol + '://i.imgur.com/' + object.uuid + 'l.jpg';
 	}
 	return object;
 }
