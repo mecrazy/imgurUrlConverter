@@ -3,10 +3,10 @@
 function getImgurUrlObj(baseUrl){
 	var object = {'page':'','original':'','small':'','large':'','uuid':''};
 	var execute = true;
-	if(!baseUrl.match(/^http:\/\/imgur.com\/[A-Za-z0-9]*?$/i)){
+	if(!baseUrl.match(/^(http|https):\/\/imgur.com\/[A-Za-z0-9]*?$/i)){
 		execute = false;
 		if(typeof console != 'undefined'){
-			console.log(baseUrl + 'is incorrect URL. Please put URL starts with "http://imgur.com/"');
+			console.log(baseUrl + 'is incorrect URL.');
 		}
 	}
 	if(execute){
