@@ -18,9 +18,9 @@ console.log(myObject);
   In this example,
     "myObject.page" is imgur page URL,
     "myObject.uuid" is current image's unique id,
-    "myObject.original " is original image file URL,
-    "myObject.small " is small image file URL,
-    "myObject.large " is large image file URL.
+    "myObject.original" is original image file URL,
+    "myObject.small" is small image file URL,
+    "myObject.large" is large image file URL.
 */
 </script>
 ```
